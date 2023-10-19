@@ -1,0 +1,117 @@
+---
+title: "Distance formula and real life distances"
+subtitle: "Geometry Honors"
+excerpt: 
+author: "Ms.Taylor"
+date: "2023-10-18"
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+## Let's talk about: the distance formula
+
+Recall that the distance formula is: $$D = \sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$$
+
+We use the distance formula when finding the distances between two
+points on a coordinate plane. In the real world, we usually can't travel
+between places on the shortest distance. We have to rely on roads,
+sidewalks, and trails to get where we are going.
+
+## Let's talk about: distances in real life
+
+City and transportation planners use computer models to find out the
+fastest way between two places. They also look at how people can get
+from place to place, which includes walking, biking, public transit, and
+cars. We're going to look at how accessible the libraries in
+Charlottesville City and the surrounding area are.
+
+Run the code below (click the green arrow) labeled setup to get ready
+for this lesson!
+
+```{r}
+#|label: setup
+#|include: false
+
+source("utils.R")
+
+```
+
+This next code chunk imports the R libraries we need to do our
+geographic analysis. Run using the green arrow.
+
+```{r}
+#|label: libraries
+load_libraries()
+```
+
+We then need to set up our map files to build our transportation model.
+This includes a file that contains the frequencies of buses in the
+Charlottesville area. Click the green arrow to run!
+
+```{r}
+#|label: setup
+setup()
+```
+
+The next chunk of code outputs points of interest. In this case, we're
+looking at local libraries!
+
+```{r}
+#|label: poi_data
+poi <- point_of_interest()
+poi
+```
+
+Take a look at the points of interest! See if you recognize any of them.
+Next, run the code chunk below to start our geographical model.
+
+```{r}
+#| label: r5r_start
+r5r_core <- r5r_start()
+```
+
+We're not actually time travelling, but we are going to calculate the
+travel time between our set of libraries. Run the code, and then follow
+the instructions in the code chunk.
+
+```{r}
+#| label: time_travel
+ttm <- time_travel("24-10-2023 14:00:00",poi,r5r_core)
+```
+
+Finally, we're going to look at an isochrone map. An isochrone map shows
+how quickly you can travel from a certain point. We're going to look at
+two different libraries, and compare the transit access to each of them.
+
+```{r}
+#| label: isochrone_map
+
+# select which two points you want on the map!
+origin1 <- poi[4, ]
+origin2 <- poi[5, ]
+# Build the map!
+isochrone_map(origin1,origin2,"24-10-2023 14:00:00",r5r_core)
+```
+
+You should have produced an isochrone map! Try experimenting with a few
+different libraries and see how the colored regions compare. What is the
+furtherest you could get away from a library in 30 minutes? 60 minutes?
+
+Finally, we need to clean up our program, by running with code below:
+
+```{r}
+#| label: clean_up
+# r5r takes up a lot of space, so we need to clean up when we're done!
+clean_up(r5r_core)
+```
+
+Great job! Now answer a few questions:
+
+1.  Summarize in 2-3 sentences, what the distance formula is, and how we
+    use it in math class.
+2.  Summarize in 5-7 sentences, your takeaways from this coding
+    experience. You can write about what you learned about the points of
+    interest, transportation, geography, or the coding itself.
+3.  What did you like about the coding experience today, what would you
+    change?

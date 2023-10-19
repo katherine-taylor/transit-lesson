@@ -2,6 +2,10 @@
 
 Lesson plan studying the distance formula and it's usefulness in actual transportation planning.
 
+Lesson materials are in the directory materials
+
+A full sample analysis is in the directory src
+
 ## Resources
 
 <https://github.com/ipeaGIT/r5r>

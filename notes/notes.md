@@ -15,3 +15,15 @@
 4.  Get a list of points of interest from anywhere, you just need an id, latitude, and longitude
 
 5.  Load in a GTFS feed (or many) for local transport
+
+## Loading R packages in a loop
+
+<https://www.mitchelloharawild.com/blog/loading-r-packages-in-a-loop/>
+
+## Getting r5r to play nice with Java
+
+I ended up needing to delete all java installations, and install with Temurin using homebrew
+
+`brew tap homebrew/cask-versions && brew install –cask temurin11`
+
+I also cleared out the environment variable "JAVA_HOME".
